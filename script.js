@@ -119,95 +119,95 @@ function search(value){
 }
 
                     /**WISHLIST */
-                    function update(data) {
-                        const bookInfos = document.querySelectorAll('.book-infos');
-                        const wishlist = document.querySelectorAll('.wishlist');
-                        const arrWishlist = JSON.parse(localStorage.getItem('arrayBooks'));
+//                     function update(data) {
+//                         const bookInfos = document.querySelectorAll('.book-infos');
+//                         const wishlist = document.querySelectorAll('.wishlist');
+//                         const arrWishlist = JSON.parse(localStorage.getItem('arrayBooks'));
                     
-                        wishlist.forEach(item => {
-                            item.addEventListener('click', () => {
-                                let title = item.parentElement.querySelector(".title");
+//                         wishlist.forEach(item => {
+//                             item.addEventListener('click', () => {
+//                                 let title = item.parentElement.querySelector(".title");
                     
-                                for (index in data){
-                                    if (title.textContent == data[index].title){
-                                        i = index;
-                                        break;
-                                    }
-                                }
+//                                 for (index in data){
+//                                     if (title.textContent == data[index].title){
+//                                         i = index;
+//                                         break;
+//                                     }
+//                                 }
                     
-                                for (const book of arrWishlist) {
-                                    if (book.id === data[i].id) {
-                                        return;
-                                    }
-                                }
+//                                 for (const book of arrWishlist) {
+//                                     if (book.id === data[i].id) {
+//                                         return;
+//                                     }
+//                                 }
                     
-                                arrWishlist.push(data[i]);
-                                localStorage.setItem("arrayBooks", JSON.stringify(arrWishlist));
+//                                 arrWishlist.push(data[i]);
+//                                 localStorage.setItem("arrayBooks", JSON.stringify(arrWishlist));
                     
-                                // window.open("my_wish_reads.html", "_blank");
-                            });
-                        });
+//                                 // window.open("my_wish_reads.html", "_blank");
+//                             });
+//                         });
 
-                        document.querySelectorAll('.wishlist').forEach(item => {
-                            // Check if the item has been clicked before (based on a unique ID)
-                            const itemId = item.getAttribute('data-id'); // Make sure each .wishlist has a unique data-id attribute
-                            const isClicked = JSON.parse(localStorage.getItem('wishlistClicked'));
+//                         document.querySelectorAll('.wishlist').forEach(item => {
+//                             // Check if the item has been clicked before (based on a unique ID)
+//                             const itemId = item.getAttribute('data-id'); // Make sure each .wishlist has a unique data-id attribute
+//                             const isClicked = JSON.parse(localStorage.getItem('wishlistClicked'));
                     
-                            // If the item was clicked before, style it as clicked
-                            if (isClicked[itemId] === 'true') {
-                                item.classList.remove('wishlist');
-                                item.classList.add('clicked-button');
-                            }
+//                             // If the item was clicked before, style it as clicked
+//                             if (isClicked[itemId] === 'true') {
+//                                 item.classList.remove('wishlist');
+//                                 item.classList.add('clicked-button');
+//                             }
                     
-                            item.addEventListener("click", () => {
-                                const isClicked = JSON.parse(localStorage.getItem('wishlistClicked'));
-                                // If already clicked, do nothing
-                                if (JSON.parse(localStorage.getItem('wishlistClicked'))[itemId] === 'true') return;
+//                             item.addEventListener("click", () => {
+//                                 const isClicked = JSON.parse(localStorage.getItem('wishlistClicked'));
+//                                 // If already clicked, do nothing
+//                                 if (JSON.parse(localStorage.getItem('wishlistClicked'))[itemId] === 'true') return;
                         
-                                // Change style to appear clicked
-                                item.classList.remove('wishlist');
-                                item.classList.add('clicked-button');
+//                                 // Change style to appear clicked
+//                                 item.classList.remove('wishlist');
+//                                 item.classList.add('clicked-button');
                     
-                                isClicked[itemId] = "true";
+//                                 isClicked[itemId] = "true";
                     
-                                // Save the clicked state to localStorage
-                                localStorage.setItem(`wishlistClicked`, JSON.stringify(isClicked));
-                            });
-                        });       
-                    }
+//                                 // Save the clicked state to localStorage
+//                                 localStorage.setItem(`wishlistClicked`, JSON.stringify(isClicked));
+//                             });
+//                         });       
+//                     }
 
 
-                    const data =  JSON.parse(localStorage.getItem('arrayBooks'));
-let mainPage = document.querySelector('#wishlist');
+//                     const data =  JSON.parse(localStorage.getItem('arrayBooks'));
+// let mainPage = document.querySelector('#wishlist');
 
-if (mainPage) {
-    mainPage.innerHTML += `
-        <table class="box">
-            <thead>
-                <tr>
-                    <th>Cover</th>
-                    <th>Title</th>
-                    <th>Author</th>
-                    <th>Action</th>
-                </tr>
-            </thead>
-            <tbody></tbody>
-        </table>
-    `;
-    // Select the tbody element correctly
-    const tbody = document.querySelector('tbody');
+// if (mainPage) {
+//     mainPage.innerHTML += `
+//         <table class="box">
+//             <thead>
+//                 <tr>
+//                     <th>Cover</th>
+//                     <th>Title</th>
+//                     <th>Author</th>
+//                     <th>Action</th>
+//                 </tr>
+//             </thead>
+//             <tbody></tbody>
+//         </table>
+//     `;
+//     // Select the tbody element correctly
+//     const tbody = document.querySelector('tbody');
 
-    for (let i = 0; i < data.length; i++) {
-        // Append the rows to tbody
-        tbody.innerHTML += `
-            <tr>
-                <td><img src="${data[i].cover}" class="img"></td>
-                <td><h3 class="title">${data[i].title}</h3></td>
-                <td><p class="full-name-author">${data[i].author.full_name}</p></td>
-                <td><button class="delete-book">Delete</button></td>
-            </tr>
-        `;
-    }
-}
+//     for (let i = 0; i < data.length; i++) {
+//         // Append the rows to tbody
+//         tbody.innerHTML += `
+//             <tr>
+//                 <td><img src="${data[i].cover}" class="img"></td>
+//                 <td><h3 class="title">${data[i].title}</h3></td>
+//                 <td><p class="full-name-author">${data[i].author.full_name}</p></td>
+//                 <td><button class="delete-book">Delete</button></td>
+//             </tr>
+//         `;
+//     }
+// }
 
-document.querySelector('click', () =)
+// document.querySelector('click', () =)

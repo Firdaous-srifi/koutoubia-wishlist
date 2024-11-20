@@ -1,69 +1,88 @@
 document.addEventListener("DOMContentLoaded", () => {
-  const wishlistData = JSON.parse(localStorage.getItem("wishlist")) || []; // Get wishlist from local storage
+  let wishlistData = JSON.parse(localStorage.getItem("wishlist")) || []; // Get wishlist from local storage
   console.log(wishlistData);
 
   const tbody = document.querySelector("tbody");
 
-  // Loop through the wishlist and add rows to the table
-  for (let i = 0; i < wishlistData.length; i++) {
-    // Append the rows to tbody
-    tbody.innerHTML += `
+  // Function to render the wishlist in the table
+  function renderWishlist() {
+    tbody.innerHTML = ""; // Clear table content
+    wishlistData.forEach((book, index) => {
+      tbody.innerHTML += `
           <tr>
-              <td><img src="${wishlistData[i].cover}" class="img"></td>
-              <td><h3 class="title">${wishlistData[i].title}</h3></td>
-              <td><p class="full-name-author">${
-                wishlistData[i].author.fullname
-              }</p></td>
-              <td>
-                  <button class="already-read" data-id=${i}>read </button>
-                  <button class="delete-book">Delete</button>
-              </td>
-              <input type="hidden" value="${wishlistData[i].id - 1}">
+            <td><img src="${book.cover}" class="img"></td>
+            <td><h3 class="title">${book.title}</h3></td>
+            <td><p class="full-name-author">${book.author.fullname}</p></td>
+            <td>
+                <button class="already-read" data-id="${index}">read </button>
+                <button class="delete-book" data-id="${index}">Delete</button>
+            </td>
           </tr>
-      `;
+        `;
+    });
   }
+
+  // Initial render of wishlist
+  renderWishlist();
+
+  // Attach a single event listener to the table for delegation
+  tbody.addEventListener("click", (e) => {
+    const target = e.target;
+
+    // Handle delete button
+    if (target.classList.contains("delete-book")) {
+      const bookIndex = target.getAttribute("data-id"); // Get the book's index from the button's data-id
+      wishlistData.splice(bookIndex, 1); // Remove the book from the array
+
+      // Update local storage and re-render the table
+      localStorage.setItem("wishlist", JSON.stringify(wishlistData));
+      renderWishlist();
+
+      alert("Book removed from wishlist.");
+    }
+  });
 });
 
 // Attach event listeners for "Delete" and "Read" buttons
-deleteBook();
+// deleteBook();
 readBook();
 
 let deleteBtn = document.querySelectorAll(".delete-book");
 
-function deleteBook() {
-  let deleteBtn = document.querySelectorAll(".delete-book");
+// function deleteBook() {
+//   let deleteBtn = document.querySelectorAll(".delete-book");
 
-  deleteBtn.forEach((btn) => {
-    btn.addEventListener("click", () => {
-      let title =
-        btn.parentElement.parentElement.querySelector(".title").innerHTML;
-      let id = btn.parentElement.parentElement.querySelector("input").value;
-      let arrayBooks = JSON.parse(localStorage.getItem("arrayBooks"));
-      const isClicked = JSON.parse(localStorage.getItem("wishlistClicked"));
-      let arrayWishlist = [...arrayBooks];
-      isClicked[id] = "false";
+//   deleteBtn.forEach((btn) => {
+//     btn.addEventListener("click", () => {
+//       let title =
+//         btn.parentElement.parentElement.querySelector(".title").innerHTML;
+//       let id = btn.parentElement.parentElement.querySelector("input").value;
+//       let arrayBooks = JSON.parse(localStorage.getItem("arrayBooks"));
+//       const isClicked = JSON.parse(localStorage.getItem("wishlistClicked"));
+//       let arrayWishlist = [...arrayBooks];
+//       isClicked[id] = "false";
 
-      for (let i = 0; i < arrayWishlist.length; i++) {
-        if (arrayWishlist[i].title === title) {
-          arrayWishlist.splice(i, 1);
-          break; // Exit the loop once the book is found and removed
-        }
-      }
+//       for (let i = 0; i < arrayWishlist.length; i++) {
+//         if (arrayWishlist[i].title === title) {
+//           arrayWishlist.splice(i, 1);
+//           break; // Exit the loop once the book is found and removed
+//         }
+//       }
 
-      /** Another way to remove from local storage
-                // Find and remove the book with the matching title
-                arrayWishlist = arrayWishlist.filter(book => book.title !== title.innerHTML);
-            */
+//       /** Another way to remove from local storage
+//                 // Find and remove the book with the matching title
+//                 arrayWishlist = arrayWishlist.filter(book => book.title !== title.innerHTML);
+//             */
 
-      // Update only the page's local storage (if you want to update it for this session)
-      // You can either leave this part out if you don't want to modify localStorage here
-      localStorage.setItem("arrayBooks", JSON.stringify(arrayWishlist));
-      localStorage.setItem(`wishlistClicked`, JSON.stringify(isClicked));
-      // Remove the HTML element from the DOM
-      btn.parentElement.parentElement.remove();
-    });
-  });
-}
+//       // Update only the page's local storage (if you want to update it for this session)
+//       // You can either leave this part out if you don't want to modify localStorage here
+//       localStorage.setItem("arrayBooks", JSON.stringify(arrayWishlist));
+//       localStorage.setItem(`wishlistClicked`, JSON.stringify(isClicked));
+//       // Remove the HTML element from the DOM
+//       btn.parentElement.parentElement.remove();
+//     });
+//   });
+// }
 
 function readBook() {
   let readBtn = document.querySelectorAll(".already-read");
@@ -108,4 +127,4 @@ function readBook() {
 }
 
 readBook();
-deleteBook();
+// deleteBook();

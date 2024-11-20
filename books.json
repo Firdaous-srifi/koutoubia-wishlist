@@ -1,0 +1,137 @@
+[
+    
+      {
+        "title": "The Psychology of Computer Programming",
+        "description": "This classic work by Gerald M. Weinberg delves into the human aspects of software development. It explores the psychological challenges faced by programmers, such as stress, motivation, and communication. The book discusses how understanding the psychological aspects of programming can lead to better collaboration, more efficient problem-solving, and the overall improvement of the software development process.",
+        "cover": "https://m.media-amazon.com/images/I/81NbMSt4eTL._AC_UF1000,1000_QL80_.jpg",
+        "linkPDF": "https://www.dorsethouse.com/pdf/Dorset-House-psy.pdf",
+        "author": {
+          "fullname": "Gerald M. Weinberg",
+          "biography": "Gerald M. Weinberg (1933–2018) was an American software engineer, consultant, and author of several influential books on programming, software development, and team dynamics. His work focused on the human aspects of programming, including motivation, team collaboration, and the psychological challenges that come with complex systems development. Weinberg was widely respected for his contributions to both software engineering and organizational management."
+        },
+        "year": "1971"
+      },
+      {
+        "title": "Sapiens: A Brief History of Humankind",
+        "description": "In 'Sapiens', Yuval Noah Harari explores the history of humankind from the Stone Age to the 21st century. The book delves into how Homo sapiens came to dominate the Earth, examining the cognitive revolution, the agricultural revolution, the unification of humankind, and the scientific revolution. Harari challenges readers to think about the future of humanity, touching on topics such as artificial intelligence and genetic engineering.",
+        "cover": "https://m.media-amazon.com/images/I/712Uo++xK2L._AC_UF1000,1000_QL80_.jpg",
+        "linkPDF": "https://www.academia.edu/36744501/Sapiens_A_brief_history_of_humankind",
+        "author": {
+          "fullname": "Yuval Noah Harari",
+          "biography": "Yuval Noah Harari is an Israeli historian and professor of history at the Hebrew University of Jerusalem. He is best known for his books 'Sapiens: A Brief History of Humankind', 'Homo Deus: A Brief History of Tomorrow', and '21 Lessons for the 21st Century'. Harari's work focuses on the big questions of human history, the future of humankind, and the implications of emerging technologies like AI and biotechnology."
+        },
+        "year": "2011"
+      },
+      {
+        "title": "The Prophet",
+        "description": "The Prophet' is a philosophical and spiritual book by Kahlil Gibran. It is a series of poetic essays on topics such as love, marriage, children, work, freedom, and pain. The book is framed through the story of a prophet, Almustafa, who shares his wisdom with the people of the city of Orphalese before he returns to his homeland. The teachings in 'The Prophet' resonate with deep insights on life and human existence, making it one of Gibran’s most beloved works.",
+        "cover": "https://www.bookgeeks.in/wp-content/uploads/2023/03/The-Prophet-by-Khalil-Gibran.jpg",
+        "linkPDF": "https://www.kahlilgibran.com/images/The%20Prophet%20Ebook%20by%20Kahlil%20Gibran.pdf",
+        "author": {
+          "fullname": "Kahlil Gibran",
+          "biography": "Kahlil Gibran (1883–1931) was a Lebanese-American poet, writer, philosopher, and artist. He is best known for his book 'The Prophet', which has been translated into over fifty languages. Gibran’s work blends spiritual and philosophical themes with lyrical prose, and his writings on topics such as love, self-discovery, and unity have resonated with readers around the world."
+        },
+        "year": "1923"
+      },
+      {
+        "title": "Le Pain Nuu",
+        "description": "'Le Pain Nu' (The Naked Bread) is an autobiographical novel by Moroccan author Mohamed Choukri. The book chronicles Choukri's difficult childhood in Tangier, marked by poverty, hunger, and hardship. It tells the story of a young boy's struggles with his family, society, and his search for meaning in life. Through raw and evocative prose, Choukri portrays the challenges of growing up in a harsh, sometimes brutal environment, making it a powerful exploration of survival and the human spirit.",
+        "cover": "https://alifbata.fr/wp-content/uploads/2020/02/Couv-LE-PAIN-NU-_-bd.jpg",
+        "linkPDF": "https://www.scribd.com/doc/80764434/Mohamed-Choukri-Le-Pain-Nu",
+        "author": {
+          "fullname": "Mohamed Choukri",
+          "biography": "Mohamed Choukri (1935–2003) was a Moroccan writer, most famous for his autobiographical works. His life was marked by hardship, including a difficult childhood in poverty. Choukri's writing, particularly in 'Le Pain Nu', is known for its raw honesty and exploration of themes like survival, social injustice, and personal identity. He wrote primarily in Arabic and his works were later translated into multiple languages, gaining international recognition."
+        },
+        "year": "1973"
+      },
+      {
+        "title": "The Little Prince",
+        "description": "The Little Prince' is a novella and the most famous work of French writer and aviator Antoine de Saint-Exupéry. The book tells the story of a young prince who travels from planet to planet, meeting various strange characters and learning important life lessons along the way. The story is a deep and poignant reflection on human nature, love, loneliness, friendship, and the importance of seeing the world with the eyes of a child. It is often considered a philosophical tale for both children and adults.",
+        "cover": "https://www.pluggedin.com/wp-content/uploads/2020/01/little-prince-cover-653x1024.jpg",
+        "linkPDF": "https://andonovicmilica.files.wordpress.com/2018/07/the_little_prince.pdf",
+        "author": {
+          "fullname": "Antoine de Saint-Exupéry",
+          "biography": "Antoine de Saint-Exupéry (1900–1944) was a French writer and aviator, best known for his works 'Night Flight', 'Wind, Sand and Stars', and 'The Little Prince'. Saint-Exupéry’s life as a pioneering aviator deeply influenced his writing, which often reflected his experiences in aviation, as well as his reflections on human nature and existential themes. He disappeared during a reconnaissance mission in 1944, and his life and works continue to inspire readers worldwide."
+        },
+        "year": "1943"
+      },
+      {
+        "title": "Season of Migration to North",
+        "description": "Season of Migration to the North' is a novel by Sudanese author Tayeb Salih, first published in 1966. The story follows the protagonist, who returns to Sudan after studying in Europe, only to become entangled with the mysterious figure of Mustafa Sa'eed, a man with a dark past. The novel explores themes of identity, colonialism, cultural conflict, and the complexities of post-colonial life. It is regarded as one of the most important works of modern Arabic literature.",
+        "cover": "https://newbookrecommendation.com/wp-content/uploads/2024/09/Season_of_Migration_to_the_North.webp",
+        "linkPDF": "https://www.scribd.com/document/539364348/Season-of-Migration-to-the-North-PDFDrive-2",
+        "author": {
+          "fullname": "Tayeb Salih ",
+          "biography": "Tayeb Salih (1929–2009) was a Sudanese writer and one of the most prominent authors of modern Arabic literature. His works often explore themes of identity, cultural conflict, and the effects of colonialism. Salih's most famous novel, 'Season of Migration to the North', is a classic of post-colonial literature, addressing the complex dynamics between the East and West. Salih's work has been translated into numerous languages and remains influential in global literary circles."
+        },
+        "year": "1966"
+      },
+      {
+        "title": "The House of the Spirits",
+        "description": "The House of the Spirits' is a novel by Chilean author Isabel Allende, first published in 1982. The book blends elements of magical realism and historical fiction, following the lives of the Trueba family over several generations. The story explores themes of love, power, social injustice, and the personal and political turmoil in 20th-century Chile. The novel is both a family saga and a reflection on the social and political struggles in Latin America. Allende’s use of magical realism brings an enchanting depth to her portrayal of the human experience.",
+        "cover": "https://d28hgpri8am2if.cloudfront.net/book_images/onix/cvr9781501117015/the-house-of-the-spirits-9781501117015_hr.jpg",
+        "linkPDF": "https://books-library.net/files/books-library.online-01150916Fz1J5.pdf",
+        "author": {
+          "fullname": "Isabel Allende",
+          "biography": "Isabel Allende is a Chilean-American writer known for her works of magical realism and historical fiction. Born in 1942, she gained international fame with her debut novel, 'The House of the Spirits'. Allende’s works often explore themes such as politics, family, love, and memory. She has written numerous bestselling books, including 'Of Love and Shadows', 'The Infinite Plan', and 'Paula'. Allende’s works have been translated into many languages, and she is widely regarded as one of Latin America's most important contemporary writers."
+        },
+        "year": "1982"
+      },
+      {
+        "title": "The Stranger",
+        "description": "The Stranger' is a philosophical novel by French author Albert Camus, first published in 1942. The novel follows Meursault, an emotionally detached Algerian man who commits an unprovoked murder. The story examines themes of existentialism, absurdism, and the meaning of life, exploring how Meursault’s indifference to social norms and his apathetic view of existence lead to his eventual trial and condemnation. Camus's work is often considered a cornerstone of 20th-century existential philosophy, questioning the nature of human existence and morality.",
+        "cover": "https://m.media-amazon.com/images/M/MV5BMzZhZDk5OGItYmUzZC00YTdiLWIxNWYtMmMwNmNjZjk3OGMyXkEyXkFqcGc@._V1_.jpg",
+        "linkPDF": "https://www.macobo.com/essays/epdf/CAMUS,%20Albert%20-%20The%20Stranger.pdf",
+        "author": {
+          "fullname": "Albert Camus ",
+          "biography": "Albert Camus (1913–1960) was a French-Algerian philosopher, author, and journalist, known for his contributions to existential philosophy and literature. His works, including 'The Stranger', 'The Myth of Sisyphus', and 'The Plague', address the absurdity of life and the human condition. Camus was awarded the Nobel Prize in Literature in 1957. His writings explore themes of alienation, freedom, and the search for meaning in an indifferent universe, and he remains a key figure in 20th-century philosophy and literature."
+        },
+        "year": "1942"
+      },
+      {
+        "title": "Coders at Work",
+        "description": "'Coders at Work' is a non-fiction book by Peter Seibel, published in 2009. The book consists of interviews with five prominent computer programmers: Donald Knuth, Ken Thompson, Robert Morris, Joe Armstrong, and Peter Norvig. These interviews delve into the personal experiences, thought processes, and philosophies of these influential figures in the field of software development. The book offers insight into the minds of legendary coders, covering topics such as problem-solving, programming practices, and the challenges of software engineering.",
+        "cover": "https://www.ibs.it/images/9781663727701_0_536_0_75.jpg",
+        "linkPDF": "https://archive.org/details/B-001-000-162",
+        "author": {
+          "fullname": "Peter Seibel",
+          "biography": "Peter Seibel is an American computer programmer, author, and entrepreneur. He is best known for his book 'Coders at Work', which offers a rare and intimate look into the minds of influential software engineers. Seibel has also worked in various programming and software development roles, and he has contributed to the field of computer science through his writing and software development work. He has written extensively about programming, software design, and the art of coding."
+        },
+        "year": "2009"
+      },
+      {
+        "title": "One Thousand and One Nights",
+        "description": "'One Thousand and One Nights' (also known as 'Arabian Nights') is a collection of Middle Eastern folk tales compiled in Arabic during the Islamic Golden Age. The stories are told by the character Scheherazade, who narrates tales to her husband, King Shahryar, in order to delay her execution. The collection includes tales of adventure, magic, love, and betrayal, featuring characters such as Aladdin, Ali Baba, and Sinbad the Sailor. These stories are a cornerstone of Arabic literature and have influenced global storytelling traditions.",
+        "cover": "https://res.cloudinary.com/bloomsbury-atlas/image/upload/w_568,c_scale,dpr_1.5/jackets/9781408827765.jpg",
+        "linkPDF": "https://nadianote.files.wordpress.com/2011/05/1001-nights.pdf",
+        "author": {
+          "fullname": "Antoine Galland",
+          "biography": "The stories in 'One Thousand and One Nights' were collected and passed down by multiple authors and storytellers over many centuries. The collection has its roots in Persian, Indian, and Arabic folklore and was compiled in the Arabic language, starting from the 9th century. Various storytellers have contributed to the content, which was later translated into numerous languages and adapted into various media forms. The exact identity of the original author or compiler remains unknown, as the stories were passed down orally."
+        },
+        "year": "9th Century (compiled)"
+      },
+      {
+        "title": "The Alchemist",
+        "description": "'The Alchemist' is an allegorical novel by Brazilian author Paulo Coelho, first published in 1988. The story follows Santiago, a young Andalusian shepherd, on his journey to discover his personal legend and fulfill his dreams. Along the way, he learns important lessons about destiny, love, and the importance of following one’s heart. The novel is filled with symbolism and has been translated into dozens of languages, becoming an international bestseller. Its themes of personal transformation and self-discovery have made it a modern classic of spiritual literature.",
+        "cover": "https://booksondemand.ma/cdn/shop/products/81ioPZFMeUL-min.jpg?v=1631701482",
+        "linkPDF": "https://icrrd.com/public/media/15-05-2021-084550The-Alchemist-Paulo-Coelho.pdf",
+        "author": {
+          "fullname": "Paulo Coelho",
+          "biography": "Paulo Coelho is a Brazilian author, best known for his novel 'The Alchemist', which has sold over 65 million copies worldwide and has been translated into more than 80 languages. Born in 1947 in Rio de Janeiro, Coelho initially pursued a career in music and journalism before turning to writing. His works explore themes of personal growth, spirituality, and destiny. Coelho is one of the most widely read authors in the world, and his books have inspired millions to pursue their dreams and seek spiritual fulfillment."
+        },
+        "year": "1988"
+      },
+      {
+        "title": "It",
+        "description": "It' is a horror novel by Stephen King, first published in 1986. The story follows a group of children in the small town of Derry, Maine, who are terrorized by a malevolent entity known as 'It'. This entity can take on the form of whatever its victims fear most, and it primarily manifests as a terrifying clown named Pennywise. The book alternates between the children's experiences in the summer of 1958 and their return to Derry as adults in 1985 to confront the evil force that haunts the town. Themes of friendship, courage, and childhood trauma are central to the novel, as the group must confront not only the physical threat posed by 'It', but also the emotional scars left by their past.",
+        "cover": "https://d28hgpri8am2if.cloudfront.net/book_images/onix/cvr9781982127794/it-9781982127794_hr.jpg",
+        "linkPDF": "https://clicklibrary.files.wordpress.com/2018/09/it-by-stephen-king.pdf",
+        "author": {
+          "fullname": "Stephen King",
+          "biography": "Stephen King is an American author of horror, supernatural fiction, suspense, and fantasy novels. He is one of the most prolific writers in contemporary literature and has published over 60 novels, many of which have been adapted into films and TV shows. Some of his most famous works include *Carrie*, *The Shining*, *Pet Sematary*, *It*, and *The Dark Tower* series. King's works often explore themes of fear, human nature, and the supernatural. His writing has earned him worldwide recognition, with many of his books becoming bestsellers"
+        },
+        "year": "1986"
+      }
+    ]
+  
+  

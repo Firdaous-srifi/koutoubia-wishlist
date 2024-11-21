@@ -2,40 +2,55 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>myWishList</title>
+    <title>Koutoubia</title>
+    <meta name="title" content="Koutoubia - Get Your New Book Collections">
+  <!--
+      - google fonts
+  -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+    href="https://fonts.googleapis.com/css2?family=Jost:wght@400;500;600&family=Work+Sans:wght@400;500;700&display=swap"
+    rel="stylesheet">
+    <!-- 
+      - favicon
+    -->
+    <link rel="shortcut icon" href="./favicon.svg" type="image/svg+xml">
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-  <header class="header" >
-    <div class="header-top">
-      <div class="container">
+    <!--
+    - header
+    -->
+    <header class="header">
+        <div class="header-top">
+          <div class="container">
 
-        <a href="/" class="logo">
-          <img src="images/logo.png" width="138" height="28" alt="koutoubia">
-        </a>
+            <a href="/" class="logo" id="home">
+              <img src="images/logo.png" width="138" height="28" alt="koutoubia">
+            </a>
+              <!--search-->
+          <div class="input-wrapper">
+            <input oninput="search(this.value)" id="search-book" type="search" name="search" placeholder="Search our store" class="input-field">
 
-        <div class="input-wrapper">
-          <input type="search" name="search" placeholder="Search our store" class="input-field">
+            <button class="btn btn-primary">Search</button>
+          </div>
 
-          <button class="btn btn-primary">Search</button>
-        </div>
-
-        <div class="header-action">
-<!--iiiiiiiiiii-->
-          <button class="header-action-btn" aria-label="cart" title="Cart">
-            <span class="span">0</span>
-
-            <ion-icon name="heart-outline" aria-hidden="true"></ion-icon>
-          </button>
-
-          
-          <button class="header-action-btn" aria-label="user" title="User">
-            <ion-icon name="person-outline" aria-hidden="true"></ion-icon>
-          </button>
-
-        </div>
-
+          <div class="header-action">
+                <!--WISH LIST-->
+              <a href="/myWishList.html" class="header-action-btn" aria-label="cart" title="Cart" id="wishlist">
+                    <!--0 SPAN-->
+              <span class="span count">0</span>
+              <ion-icon name="heart-outline" aria-hidden="true"></ion-icon>
+              </a>
+                <!--OPEN MENU-->
+              <button class="nav-open-btn" aria-label="open menu" title="Open Menu" data-nav-toggler>
+              <ion-icon name="menu-outline" aria-hidden="true"></ion-icon>
+              </button>
+          </div>
       </div>
     </div>
 
@@ -44,7 +59,7 @@
 
         <nav class="navbar">
 
-          <button class="nav-close-btn" data-nav-toggler aria-label="clsoe menu" title="Clsoe Menu">
+          <button class="nav-close-btn">
             <ion-icon name="close-outline" aria-hidden="true"></ion-icon>
           </button>
 
@@ -59,47 +74,45 @@
           <ul class="navbar-list">
 
             <li>
-              <a href="#" class="navbar-link">Home</a>
+              <a href="#home" class="navbar-link" id="home" class="logo">Home</a>
             </li>
 
             <li>
-              <a href="#" class="navbar-link">Blog</a>
+              <a href="#offer" class="navbar-link" id="home" class="logo">Offers</a>
             </li>
 
             <li>
-              <a href="#" class="navbar-link">Contact</a>
+              <a href="#blog" class="navbar-link">Blog</a>
+            </li>
+
+            <li>
+              <a href="#contact" class="navbar-link">Contact</a>
             </li>
 
           </ul>
 
         </nav>
 
-        <a href="tel:(+212)-634-56789" class="header-contact-link">
+        <a href="tel:(+212)-66666-66-66" class="header-contact-link">
           <ion-icon name="headset-outline" aria-hidden="true"></ion-icon>
 
-          <span class="span">(+212)-634-56789</span>
+          <span class="span">(+212)-66666-66-66</span>
         </a>
 
       </div>
     </div>
 
-    <div class="overlay" ></div>
-  </header>
+    </header>
 
+<br><br><br><br><br><br><br>
 
-      <!--WishList-->
+      <!--
+      - WISHLIST
+      -->
       <main>
         <section class="Wishlist" id="wishlist">
-          <!-- Book details will be dynamically loaded here -->
+          <!-- WISHLIST BOOKS WILL BE HERE :) -->
           <table class="container">
-            <!-- <thead>
-                <tr>
-                    <th>Cover</th>
-                    <th>Title</th>
-                    <th>Author</th>
-                    <th>Action</th>
-                </tr>
-            </thead> -->
             <tbody>
               
             </tbody>
@@ -107,8 +120,12 @@
         </section>
       </main>
 
+<br><br><br><br><br><br><br>
 
-      <footer class="footer has-bg-image" style="background-image: url('images/section-bg.jpg')">
+      <!--
+      - FOOTER
+      -->
+      <footer id="contact" class="footer has-bg-image" style="background-image: url('images/section-bg.jpg')">
 
         <div class="footer-top section">
           <div class="container grid-list">
@@ -250,8 +267,9 @@
           <div class="container">
     
             <p class="copyright">
-              Copyright 2023 | Made by FIRDAOUS.
+              @Copyright 2024 | Made by FIRDAOUS & ZAYNAB.
             </p>
+            
     
             <img src="images/payment-mehtod.png" width="311" height="30" loading="lazy" alt="Payment method"
               class="w-100">
@@ -260,7 +278,16 @@
         </div>
     
       </footer>
-    
-    <script src="myWishList.js"></script>
+
+      <!--
+      - JAVASCRIPT LINK
+      -->
+      <script src="myWishList.js"></script>
+
+      <!-- 
+      - ionicon links
+      -->
+      <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+      <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 </body>
 </html>

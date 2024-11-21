@@ -6,12 +6,11 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Koutoubia</title>
-  <meta name="title" content="Booken - Get Your New Book Collections">
-
-
-  <link rel="stylesheet" href="style.css">
-
-
+  <meta name="title" content="Koutoubia - Get Your New Book Collections">
+  
+  <!--
+      - google fonts
+  -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
@@ -21,21 +20,20 @@
     - favicon
   -->
   <link rel="shortcut icon" href="./favicon.svg" type="image/svg+xml">
-  
-
+  <link rel="stylesheet" href="style.css">
 </head>
 
-<body id="top">
+<body>
 
   <!-- 
-    - #HEADERR
+    - header
   -->
 
-  <header class="header" >
+  <header class="header">
     <div class="header-top">
       <div class="container">
 
-        <a href="#" class="logo" id="home">
+        <a href="#home" class="logo" id="home">
           <img src="images/logo.png" width="138" height="28" alt="koutoubia">
         </a>
               <!--search-->
@@ -46,18 +44,16 @@
         </div>
 
         <div class="header-action">
-              <!--wishlist-->
+              <!--WISH LIST-->
           <a href="/myWishList.html" class="header-action-btn" aria-label="cart" title="Cart" id="wishlist">
-            <span class="span">0</span>
-
+                  <!--0 SPAN-->
+            <span class="span count">0</span>
             <ion-icon name="heart-outline" aria-hidden="true"></ion-icon>
           </a>
-
-          
-          <button class="header-action-btn" aria-label="user" title="User">
-            <ion-icon name="person-outline" aria-hidden="true"></ion-icon>
+              <!--OPEN MENU-->
+          <button class="nav-open-btn" aria-label="open menu" title="Open Menu" data-nav-toggler>
+            <ion-icon name="menu-outline" aria-hidden="true"></ion-icon>
           </button>
-
         </div>
 
       </div>
@@ -83,15 +79,19 @@
           <ul class="navbar-list">
 
             <li>
-              <a href="#" class="navbar-link" id="home" class="logo">Home</a>
+              <a href="#home" class="navbar-link" id="home" class="logo">Home</a>
             </li>
 
             <li>
-              <a href="#" class="navbar-link">Blog</a>
+              <a href="#offer" class="navbar-link" id="home" class="logo">Offers</a>
             </li>
 
             <li>
-              <a href="#" class="navbar-link">Contact</a>
+              <a href="#blog" class="navbar-link">Blog</a>
+            </li>
+
+            <li>
+              <a href="#contact" class="navbar-link">Contact</a>
             </li>
 
           </ul>
@@ -107,15 +107,16 @@
       </div>
     </div>
 
-    <div class="overlay" ></div>
   </header>
 
 
 
-<br><br><br><br>
+<br><br><br><br><br>
 
 
-
+  <!-- 
+    MAIN
+  -->
   <main>
     <article>
 
@@ -126,37 +127,24 @@
       <section class="section hero has-bg-image" aria-label="home"
         style="background-image: url('images/hero.jpg')">
         <div class="container">
-
           <div class="hero-content">
-
             <h1 class="h1 hero-title has-after">
               Find Your Next <br>
               Book
             </h1>
-
             <p class="hero-text">
                 Stories Rooted in Culture, 
                 Pages Filled with Wonder.
             </p>
-
             <div class="btn-wrapper">
-
               <a href="#" class="btn">
                 <span class="span">Explore More</span>
-
-                
               </a>
-
               <button class="play-btn" aria-label="play video">
                 <ion-icon name="play-outline" aria-hidden="true"></ion-icon>
               </button>
-
             </div>
-
           </div>
-
-          
-
         </div>
       </section>
 
@@ -172,74 +160,23 @@
         <div class="container">
 
           <h2 class="h2 section-title">New Arrivals</h2>
-
           <p class="section-text">
             Reading helps you developing your communication
-skills
+            skills
           </p><br>
-          <!--BOOKS LIST ID-->
+                        <!--BOOKS LIST ID-->
           <ul class="grid-list" id="grid-list">
-
-            <!-- <li>
-              <div class="product-card">
-
-                <span class="card-badge">New</span>
-
-                <div class="card-banner img-holder" style="--width: 384; --height: 480;">
-                  <img src="images/book1.png" width="384" height="480" loading="lazy" alt="Black Night"
-                    class="img-cover">
-
-                  <div class="card-action">
-
-                    <button class="action-btn details" aria-label="quick view" title="Quick View">
-                      <ion-icon name="eye-outline" aria-hidden="true"></ion-icon>
-                    </button>
-
-                    <button class="action-btn wishlist" aria-label="add to wishlist" title="Add to Wishlist">
-                      <ion-icon name="heart-outline" aria-hidden="true"></ion-icon>
-                    </button>
-
-                  </div>
-                </div>
-
-                <div class="card-content">
-
-                  
-                    <h2 href="#" class="card-title h3">Black Night</h2>
-                  
-                  <data class="card-price" value="19">Author</data>
-
-                  
-
-                  <div class="rating-wrapper">
-                    <ion-icon name="star-outline" aria-hidden="true"></ion-icon>
-                    <ion-icon name="star-outline" aria-hidden="true"></ion-icon>
-                    <ion-icon name="star-outline" aria-hidden="true"></ion-icon>
-                    <ion-icon name="star-outline" aria-hidden="true"></ion-icon>
-                    <ion-icon name="star-outline" aria-hidden="true"></ion-icon>
-                  </div>
-
-                </div>
-
-              </div>
-            </li> -->
-
             
-
           </ul>
-
         </div>
       </section>
-
-
-
 
 
       <!-- 
         - #OFFER
       -->
 
-      <section class="section offer has-bg-image" aria-label="special offer"
+      <section id="offer" class="section offer has-bg-image" aria-label="special offer"
         style="background-image: url('./assets/images/section-bg.jpg')">
         <div class="container">
 
@@ -271,12 +208,6 @@ skills
               <p class="countdown-label">Min</p>
             </li>
 
-            <li>
-              <p class="countdown-time">14</p>
-
-              <p class="countdown-label">Sec</p>
-            </li>
-
           </ul>
 
           <a href="#" class="btn">Explore More</a>
@@ -284,106 +215,18 @@ skills
         </div>
       </section>
 
-
-
-
-
-      <!-- 
-        - #CATEGORIES
-      -->
-
-      <section class="section popular" aria-label="popular collection">
-        <div class="container">
-
-          <h2 class="h2 section-title">Browse Categories</h2>
-
-          <p class="section-text">
-            Reading books keeps you relax and helps
-reduce stress
-          </p>
-
-          <ul class="filter-list">
-
-            <li>
-              <button class="filter-btn" data-filter-btn="Science">Science</button>
-            </li>
-
-            <li>
-              <button class="filter-btn" data-filter-btn="History">History</button>
-            </li>
-
-            <li>
-              <button class="filter-btn" data-filter-btn="Romance">Novels</button>
-            </li>
-
-          </ul>
-
-          <ul class="grid-list">
-
-            <li>
-              <div class="product-card">
-
-                <span class="card-badge">New</span>
-
-                <div class="card-banner img-holder" style="--width: 384; --height: 480;">
-                  <img src="https://m.media-amazon.com/images/I/81NbMSt4eTL._AC_UF1000,1000_QL80_.jpg" width="384" height="480" loading="lazy" alt="The Psychology of Computer Programming"
-                    class="img-cover">
-
-                  <div class="card-action">
-
-                    <button class="action-btn" aria-label="quick view" title="Quick View">
-                      <ion-icon name="eye-outline" aria-hidden="true"></ion-icon>
-                    </button>
-
-                    <button class="action-btn" aria-label="add to wishlist" title="Add to Wishlist">
-                      <ion-icon name="heart-outline" aria-hidden="true"></ion-icon>
-                    </button>
-
-                  </div>
-                </div>
-
-                <div class="card-content">
-
-                  <h3 class="h3">
-                    <a href="#" class="card-title">The Psychology of Computer Programming</a>
-                  </h3>
-                  <data class="card-price" value="19">Gerald M. Weinberg</data>
-
-                  
-
-                  <div class="rating-wrapper">
-                    <ion-icon name="star-outline" aria-hidden="true"></ion-icon>
-                    <ion-icon name="star-outline" aria-hidden="true"></ion-icon>
-                    <ion-icon name="star-outline" aria-hidden="true"></ion-icon>
-                    <ion-icon name="star-outline" aria-hidden="true"></ion-icon>
-                    <ion-icon name="star-outline" aria-hidden="true"></ion-icon>
-                  </div>
-
-                </div>
-
-              </div>
-              
-            </li>
-
-            
-
-          </ul>
-          
-
-        </div>
-      </section>
-
+      
       <!-- 
         - #BLOG
       -->
 
-      <section class="section blog" aria-label="blog">
+      <section class="section blog container" aria-label="blog" id="blog">
         <div class="container">
 
           <h2 class="h2 section-title">Latest Blog</h2>
 
           <p class="section-text">
-            BookChoix has a big catalog of 12 Million books online.
+            Koutoubia has a big catalog of 12 Million books online.
           </p>
 
           <ul class="has-scrollbar">
@@ -405,11 +248,11 @@ reduce stress
                   <ul class="card-meta-list">
 
                     <li class="meta-item">
-                      <time class="meta-link" datetime="2022-03-04">20 November, 2024</time>
+                      <time class="meta-link" datetime="2022-03-04">22 November, 2024</time>
                     </li>
 
                     <li class="meta-item">
-                      <a href="#" class="meta-link">1 comment</a>
+                      <a href="#" class="meta-link">2 comments</a>
                     </li>
 
                   </ul>
@@ -508,14 +351,11 @@ reduce stress
   </main>
 
 
-
-
-
   <!-- 
     - #FOOTER
   -->
 
-  <footer class="footer has-bg-image" style="background-image: url('images/section-bg.jpg')">
+  <footer id="contact" class="footer has-bg-image" style="background-image: url('images/section-bg.jpg')">
 
     <div class="footer-top section">
       <div class="container grid-list">
@@ -657,8 +497,9 @@ reduce stress
       <div class="container">
 
         <p class="copyright">
-          Copyright 2023 | Made by FIRDAOUS.
+          @Copyright 2024 | Made by FIRDAOUS & ZAYNAB.
         </p>
+        
 
         <img src="images/payment-mehtod.png" width="311" height="30" loading="lazy" alt="Payment method"
           class="w-100">
@@ -669,21 +510,7 @@ reduce stress
   </footer>
 
 
-
-
-
-  <!-- 
-    - #BACK TO TOP
-  -->
-
-  <!-- <a href="#top" class="back-top-btn" aria-label="back to top" data-back-top-btn>
-    <ion-icon name="chevron-up" aria-hidden="true"></ion-icon>
-  </a> -->
   
-
-
-
-
   
   <script src="script.js" defer></script>
 

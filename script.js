@@ -25,11 +25,7 @@ function displayBooks(books) {
             <div class="product-card">
                 <span class="card-badge">New</span>
                 <div class="card-banner img-holder" style="--width: 384; --height: 480;">
-                    <img src="${
-                      book.cover
-                    }" width="384" height="480" loading="lazy" alt="${
-      book.title
-    }" class="img-cover">
+                    <img src="${book.cover}" width="384" height="480" loading="lazy" alt="${book.title}" class="img-cover">
                     <div class="card-action">
                         <a href="details.html?id=${i}" class="action-btn details" aria-label="Quick View" title="Quick View">
                             <ion-icon name="eye-outline" aria-hidden="true"></ion-icon>
@@ -42,26 +38,19 @@ function displayBooks(books) {
                 <div class="card-content">
                 <br>
                     <h2 class="card-title h3">${book.title}</h2>
-                    <h2 class="card-price">${
-                      book.author?.fullname || "Unknown Author"
-                    }</h2>
+                    <h2 class="card-price">${book.author?.fullname || "Unknown Author"}</h2>
                     <div class="rating-wrapper">
-                        ${Array(5)
-                          .fill(
-                            '<ion-icon name="star-outline" aria-hidden="true"></ion-icon>'
-                          )
-                          .join("")}
+                        ${Array(5).fill('<ion-icon name="star-outline" aria-hidden="true"></ion-icon>').join("")}
                     </div>
                 </div>
             </div>`;
     booksContainer.appendChild(bookItem);
   });
 
-  // Attach the books array globally so it can be accessed in the `addToWishlist` function
   window.books = books;
 }
 
-// Function to add a book to wishlist and save it in local storage
+    // Function to add a book to wishlist and save it in local storage
 function addToWishlist(bookIndex) {
   const book = window.books[bookIndex]; // Access the book by its index
   let wishlist = JSON.parse(localStorage.getItem("wishlist")) || []; // Retrieve wishlist from local storage
@@ -70,28 +59,36 @@ function addToWishlist(bookIndex) {
   if (!wishlist.some((wish) => wish.title === book.title)) {
     wishlist.push(book);
     localStorage.setItem("wishlist", JSON.stringify(wishlist)); // Save updated wishlist
-    alert(`${book.title} has been added to your wishlist!`);
+    // alert(`${book.title} has been added to your wishlist!`);
+    updateBadgeCounter();
   } else {
     alert(`${book.title} is already in your wishlist.`);
   }
 }
 
+function updateBadgeCounter(){
+  let wishlist = JSON.parse(localStorage.getItem("wishlist")) || []; // Retrieve wishlist from local storage
+  const badge=document.querySelector(".count");
+  badge.textContent=wishlist.length;
+}
+updateBadgeCounter();
+
 // Fetch and display books on page load
 fetchAndDisplayBooks();
 
 // Fetch books and display them
-fetch("books.json")
-  .then((response) => {
-    if (!response.ok) {
-      throw new Error("Error fetching data");
-    }
-    return response.json();
-  })
-  .then((data) => {
-    books = data;
-    displayBooks(books); // Pass books array to the function
-  })
-  .catch((error) => console.error(error));
+// fetch("books.json")
+//   .then((response) => {
+//     if (!response.ok) {
+//       throw new Error("Error fetching data");
+//     }
+//     return response.json();
+//   })
+//   .then((data) => {
+//     books = data;
+//     displayBooks(books); // Pass books array to the function
+//   })
+//   .catch((error) => console.error(error));
 
 const searchBook = document.querySelector("#search-book");
 /**SEARCH BOOKS */
@@ -134,95 +131,6 @@ function search(value) {
   update(data);
 }
 
-/**WISHLIST */
-//                     function update(data) {
-//                         const bookInfos = document.querySelectorAll('.book-infos');
-//                         const wishlist = document.querySelectorAll('.wishlist');
-//                         const arrWishlist = JSON.parse(localStorage.getItem('arrayBooks'));
 
-//                         wishlist.forEach(item => {
-//                             item.addEventListener('click', () => {
-//                                 let title = item.parentElement.querySelector(".title");
 
-//                                 for (index in data){
-//                                     if (title.textContent == data[index].title){
-//                                         i = index;
-//                                         break;
-//                                     }
-//                                 }
 
-//                                 for (const book of arrWishlist) {
-//                                     if (book.id === data[i].id) {
-//                                         return;
-//                                     }
-//                                 }
-
-//                                 arrWishlist.push(data[i]);
-//                                 localStorage.setItem("arrayBooks", JSON.stringify(arrWishlist));
-
-//                                 // window.open("my_wish_reads.html", "_blank");
-//                             });
-//                         });
-
-//                         document.querySelectorAll('.wishlist').forEach(item => {
-//                             // Check if the item has been clicked before (based on a unique ID)
-//                             const itemId = item.getAttribute('data-id'); // Make sure each .wishlist has a unique data-id attribute
-//                             const isClicked = JSON.parse(localStorage.getItem('wishlistClicked'));
-
-//                             // If the item was clicked before, style it as clicked
-//                             if (isClicked[itemId] === 'true') {
-//                                 item.classList.remove('wishlist');
-//                                 item.classList.add('clicked-button');
-//                             }
-
-//                             item.addEventListener("click", () => {
-//                                 const isClicked = JSON.parse(localStorage.getItem('wishlistClicked'));
-//                                 // If already clicked, do nothing
-//                                 if (JSON.parse(localStorage.getItem('wishlistClicked'))[itemId] === 'true') return;
-
-//                                 // Change style to appear clicked
-//                                 item.classList.remove('wishlist');
-//                                 item.classList.add('clicked-button');
-
-//                                 isClicked[itemId] = "true";
-
-//                                 // Save the clicked state to localStorage
-//                                 localStorage.setItem(`wishlistClicked`, JSON.stringify(isClicked));
-//                             });
-//                         });
-//                     }
-
-//                     const data =  JSON.parse(localStorage.getItem('arrayBooks'));
-// let mainPage = document.querySelector('#wishlist');
-
-// if (mainPage) {
-//     mainPage.innerHTML += `
-//         <table class="box">
-//             <thead>
-//                 <tr>
-//                     <th>Cover</th>
-//                     <th>Title</th>
-//                     <th>Author</th>
-//                     <th>Action</th>
-//                 </tr>
-//             </thead>
-//             <tbody></tbody>
-//         </table>
-//     `;
-//     // Select the tbody element correctly
-//     const tbody = document.querySelector('tbody');
-
-//     for (let i = 0; i < data.length; i++) {
-//         // Append the rows to tbody
-//         tbody.innerHTML += `
-//             <tr>
-//                 <td><img src="${data[i].cover}" class="img"></td>
-//                 <td><h3 class="title">${data[i].title}</h3></td>
-//                 <td><p class="full-name-author">${data[i].author.full_name}</p></td>
-//                 <td><button class="delete-book">Delete</button></td>
-//             </tr>
-//         `;
-//     }
-// }
-
-// document.querySelector('click', () =)

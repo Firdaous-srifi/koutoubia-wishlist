@@ -62,23 +62,19 @@
 
 }
 
-
-
-
-
 /*-----------------------------------*\
-  #RESET
+          MY GLOBAL CSS :)
 \*-----------------------------------*/
 
-*,
-*::before,
-*::after {
+*{
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-li { list-style: none; }
+li { 
+  list-style: none; 
+}
 
 a,
 img,
@@ -94,7 +90,9 @@ a {
   text-decoration: none;
 }
 
-img { height: auto; }
+img { 
+  height: auto;
+}
 
 input,
 button {
@@ -125,27 +123,16 @@ body {
   line-height: 1.5;
 }
 
-:focus-visible { outline-offset: 4px; }
-
-::-webkit-scrollbar { width: 10px; }
-
-::-webkit-scrollbar-track { background-color: hsl(0, 0%, 98%); }
-
-::-webkit-scrollbar-thumb { background-color: hsl(0, 0%, 80%); }
-
-::-webkit-scrollbar-thumb:hover { background-color: hsl(0, 0%, 70%); }
-
-
-
-
 
 /*-----------------------------------*\
-  #REUSED STYLE
+            REUSED STYLE
 \*-----------------------------------*/
 
 .container { padding-inline: 15px; }
 
-.section { padding-block: var(--section-padding); }
+.section { 
+  padding-block: var(--section-padding);
+}
 /*BG IMAGE*/
 .has-bg-image {
   background-repeat: no-repeat;
@@ -168,6 +155,7 @@ body {
 
 .h3 { font-size: var(--fs-6); }
 
+/*the line under the "FIND YOUR NEXT BOOK"*/
 .has-before,
 .has-after {
   position: relative;
@@ -182,7 +170,7 @@ body {
 }
 
 .btn {
-  font-size: var(--fs-7);
+  font-size: var(--fs-4);
   font-weight: var(--fw-500);
   max-width: max-content;
   border: 1px solid var(--white-1);
@@ -192,6 +180,7 @@ body {
   padding: 18px 30px;
   border-radius: var(--radius-pill);
   transition: var(--transition-1);
+  animation: pulse 1.5s ease infinite;
 }
 
 .btn ion-icon { font-size: 16px; }
@@ -209,8 +198,6 @@ body {
   grid-template-columns: 1fr 1fr;
 }
 
-
-
 .section-title,
 .section-text { text-align: center; }
 
@@ -227,6 +214,9 @@ body {
   object-fit: cover;
 }
 
+/*-----------------------------------*\
+              PRODUCT
+\*-----------------------------------*/
 .product-card {
   position: relative;
   border: 1px solid var(--white_10);
@@ -276,18 +266,15 @@ body {
   color: var(--maximum-blue-green);
 }
 
-.product-card .card-content { padding: 10px; }
+.product-card .card-content { 
+  padding: 10px; 
+}
 
 .product-card .h3 { font-weight: var(--fw-400); }
 
 .product-card .card-title {
   font-family: var(--ff-jost);
   transition: var(--transition-1);
-}
-
-.product-card .card-price {
-  color: var(--maximum-blue-green);
-  margin-block: 10px 5px;
 }
 
 .product-card .rating-wrapper {
@@ -324,11 +311,8 @@ body {
 .has-scrollbar::-webkit-scrollbar-button { width: 10%; }
 
 
-
-
-
 /*-----------------------------------*\
-  #HEADER
+              #HEADER
 \*-----------------------------------*/
 
 .header-top :is(.input-wrapper, .header-action-btn:last-child),
@@ -414,6 +398,9 @@ body {
   transition: 0.5s var(--cubic-out);
 }
 
+/*-----------------------------------*\
+              NAVBAR
+\*-----------------------------------*/
 .nav-close-btn {
   position: absolute;
   top: -1px;
@@ -461,26 +448,6 @@ body {
 }
 
 .navbar-link:is(:hover, :focus) { color: var(--maximum-blue-green); }
-
-.overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100vh;
-  background-color: var(--eerie-black_70);
-  opacity: 0;
-  pointer-events: none;
-  transition: var(--transition-1);
-}
-
-.overlay.active {
-  opacity: 1;
-  pointer-events: all;
-}
-
-
-
 
 
 /*-----------------------------------*\
@@ -692,37 +659,6 @@ body {
   max-width: max-content;
   margin-inline: auto;
 }
-
-
-
-
-
-/*-----------------------------------*\
-  #BACK TO TOP
-\*-----------------------------------*/
-
-/* .back-top-btn {
-  position: fixed;
-  bottom: 30px;
-  right: 20px;
-  background-color: var(--maximum-blue-green);
-  font-size: 20px;
-  padding: 10px;
-  border-radius: var(--radius-circle);
-  transition: var(--transition-1);
-  opacity: 0;
-  visibility: hidden;
-  z-index: 3;
-}
-
-.back-top-btn.active {
-  transform: translateY(10px);
-  opacity: 1;
-  visibility: visible;
-} */
-
-
-
 
 
 /*-----------------------------------*\
@@ -1278,9 +1214,9 @@ body {
 
 /*DELETE AND READ*/
 .delete-book {
-  background-color: #030128;
+  background-color: #ff0707;
   /* color: var(--white-1); */
-  font-size: var(--fs-7);
+  font-size: var(--fs-5);
   font-weight: var(--fw-700);
   max-width: max-content;
   border: 1px solid var(--white-2);
@@ -1290,23 +1226,27 @@ body {
   padding: 18px 27px;
   border-radius: var(--radius-pill);
   transition: var(--transition-1);
+  /* animation: pulse 1.5s ease infinite; */
+  
 }
+
 .delete-book:hover {
-  background-color: #ff0707;
+  background-color: #030128;
 }
 
 .already-read {
-  background-color: var(--granite-gray);
-  color: var(--white-1);
-  padding: 8px 15px;
-  border-radius: 4px;
-  transition: background-color 0.3s ease;
-}
-
-.already-read.read-active {
-  background-color: #28a745;
-}
-
-.already-read span {
-  margin-left: 8px;
+  /* background-color: #b7ed85; */
+  /* color: var(--white-1); */
+  font-size: var(--fs-7);
+  font-weight: var(--fw-700);
+  max-width: max-content;
+  border: 1px solid var(--white-1);
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 18px 30px;
+  border-radius: var(--radius-pill);
+  transition: var(--transition-1);
+  
+  
 }

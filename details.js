@@ -39,7 +39,11 @@
         <p class="book-bio"><strong>Biography:</strong> ${book.author.biography || "No biography available."}</p>
         <p class="book-description"><strong>Description:</strong> ${book.description || "No description available."}</p>
         <p class="book-year"><strong>Publication Year:</strong> ${book.year || "unknown"}</p>
+        <a href="${book.linkPDF}" class="btn">read</a>
         </div>
+       
+                
+                
       </div>
       </section>
     `;

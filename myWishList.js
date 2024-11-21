@@ -9,14 +9,15 @@ document.addEventListener("DOMContentLoaded", () => {
     tbody.innerHTML = ""; // Clear table content
     wishlistData.forEach((book, index) => {
       tbody.innerHTML += `
+      <br><br><br><br><br><br><br><br><br><br><br><br>
           <tr>
-            <td><img src="${book.cover}" class="img"></td>
-            <td><h3 class="title">${book.title}</h3></td>
-            <td><p class="full-name-author">${book.author.fullname}</p></td>
+            <td><img src="${book.cover}"  class="book-cover"></td>
+            <td><h1 class="book-title">${book.title}</h3></td>
             <td>
-                <a href="${book.linkPDF}" class="already-read" data-id="${index}">read </a>
+                <a href="${book.linkPDF}" class="btn" data-id="${index}">read</a>
                 <button class="delete-book" data-id="${index}">Delete</button>
             </td>
+            
           </tr>
         `;
     });

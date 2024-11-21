@@ -1264,7 +1264,7 @@ body {
   }
 
   .book-title {
-    font-size: var(--fs-1);
+    font-size: var(--fs-3);
   }
 
   .book-author,
@@ -1273,4 +1273,40 @@ body {
   .book-year {
     font-size: var(--fs-6);
   }
+}
+
+
+/*DELETE AND READ*/
+.delete-book {
+  background-color: #030128;
+  /* color: var(--white-1); */
+  font-size: var(--fs-7);
+  font-weight: var(--fw-700);
+  max-width: max-content;
+  border: 1px solid var(--white-2);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 18px 27px;
+  border-radius: var(--radius-pill);
+  transition: var(--transition-1);
+}
+.delete-book:hover {
+  background-color: #ff0707;
+}
+
+.already-read {
+  background-color: var(--granite-gray);
+  color: var(--white-1);
+  padding: 8px 15px;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+
+.already-read.read-active {
+  background-color: #28a745;
+}
+
+.already-read span {
+  margin-left: 8px;
 }

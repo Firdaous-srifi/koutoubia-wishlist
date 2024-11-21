@@ -14,7 +14,7 @@ document.addEventListener("DOMContentLoaded", () => {
             <td><h3 class="title">${book.title}</h3></td>
             <td><p class="full-name-author">${book.author.fullname}</p></td>
             <td>
-                <button class="already-read" data-id="${index}">read </button>
+                <a href="${book.linkPDF}" class="already-read" data-id="${index}">read </a>
                 <button class="delete-book" data-id="${index}">Delete</button>
             </td>
           </tr>

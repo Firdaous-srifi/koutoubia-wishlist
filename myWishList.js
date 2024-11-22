@@ -1,98 +1,77 @@
 document.addEventListener("DOMContentLoaded", () => {
   let wishlistData = JSON.parse(localStorage.getItem("wishlist")) || []; // Get wishlist from local storage
-  // let alreadyRead = JSON.parse(localStorage.getItem("already-read")) || [];
-  console.log(wishlistData);
-
   const tbody = document.querySelector("tbody");
+  const searchInput = document.querySelector("#search-book");
 
   // Function to render the wishlist in the table
-  function renderWishlist() {
-    tbody.innerHTML = ""; // Clear table content
-    wishlistData.forEach((book, index) => {
+  function renderWishlist(filteredData = wishlistData) {
+    tbody.innerHTML = ""; 
+    filteredData.forEach((book, index) => {
       tbody.innerHTML += `
-      <br><br><br><br><br><br><br><br><br><br><br><br>
           <tr>
-            <td><img src="${book.cover}"  class="book-cover"></td>
-            <td><h1 class="book-title">${book.title}</h3></td>
-            <br>
+            <td><img src="${book.cover}" class="book-cover"></td>
+            <td><h1 class="book-title">${book.title}</h1></td>
             <h2 class="book-author"><strong>Author:</strong> ${book.author.fullname || "Unknown"}</h2>
             <td>
                 <a href="${book.linkPDF}" class="btn" data-id="${index}">PDF</a>
-                <button class="already-read" data-id="${index}">read</button>
+                <button class="already-read" data-id="${index}">Unread</button>
                 <br>
                 <button class="delete-book" data-id="${index}">Delete</button>
             </td>
-            
           </tr>
         `;
     });
   }
-  // Initial render of wishlist
+
+  // Render the full wishlist initially
   renderWishlist();
 
-  // Attach a single event listener to the table for delegation
+  // Search functionality
+  searchInput.addEventListener("input", (e) => {
+    const searchTerm = e.target.value.toLowerCase(); // Get the search term
+    const filteredData = wishlistData.filter((book) =>
+      book.title.toLowerCase().includes(searchTerm) || 
+      (book.author.fullname && book.author.fullname.toLowerCase().includes(searchTerm))
+    );
+    renderWishlist(filteredData); // Render only matching books
+  });
+
+
   tbody.addEventListener("click", (e) => {
     const target = e.target;
+
+    // Already Read
+if (target.classList.contains("already-read")) {
+  if (target.textContent === "Unread") {
+    target.style.backgroundColor = "#48d985"; // green
+    target.textContent = "Unfinished";
+  } else if (target.textContent === "Unfinished") {
+    target.style.backgroundColor = "#00642a"; // dark green
+    target.textContent = "Finished";
+  } else {
+    target.style.backgroundColor = "#030128"; // dark blue
+    target.textContent = "Unread";
+  }
+}
+
 
     // Handle delete button
     if (target.classList.contains("delete-book")) {
       const bookIndex = target.getAttribute("data-id"); // Get the book's index from the button's data-id
-      wishlistData.splice(bookIndex, 1); // Remove the book from the array
+      wishlistData.splice(bookIndex, 1); 
 
       // Update local storage and re-render the table
       localStorage.setItem("wishlist", JSON.stringify(wishlistData));
       renderWishlist();
       updateBadgeCounter();
-
-      // alert("Book removed from wishlist.");
     }
   });
+
+  // Update wishlist badge
+  function updateBadgeCounter() {
+    const badge = document.querySelector(".count");
+    badge.textContent = wishlistData.length;
+  }
+
+  updateBadgeCounter(); 
 });
-
-
-readBook();
-
-let deleteBtn = document.querySelectorAll(".delete-book");
-
-function readBook() {
-  let readBtn = document.querySelectorAll(".already-read");
-
-  readBtn.forEach((btn) => {
-    const itemId = btn.getAttribute("data-id");
-    const isClicked = JSON.parse(localStorage.getItem("readBook"));
-
-    // If the item was clicked before, style it as clicked
-    if (isClicked[itemId] == "true") {
-      btn.style.backgroundColor = "#28a745";
-      btn.innerHTML += "<span><i class='fa-solid fa-check'></i></span>";
-    }
-
-    btn.addEventListener("click", () => {
-      const isClicked = JSON.parse(localStorage.getItem("readBook"));
-      if (isClicked[itemId] == "true") {
-        // If already clicked, revert the changes
-        btn.style.backgroundColor = "#fd7e14";
-        btn.innerHTML = "read ";
-        isClicked[itemId] = "false";
-      } else {
-        // Change style to indicate clicked
-        btn.style.backgroundColor = "#28a745";
-        btn.innerHTML += "<span><i class='fa-solid fa-check'></i></span>";
-        isClicked[itemId] = "true";
-      }
-
-  
-      localStorage.setItem(`readBook`, JSON.stringify(isClicked));
-      
-    });
-  });
-}
-
-readBook();
-      // UPDATE BADGE
-function updateBadgeCounter(){
-  let wishlist = JSON.parse(localStorage.getItem("wishlist")) || []; // Retrieve wishlist from local storage
-  const badge=document.querySelector(".count");
-  badge.textContent=wishlist.length;
-}
-updateBadgeCounter();

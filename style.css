@@ -170,7 +170,7 @@ body {
 }
 
 .btn {
-  font-size: var(--fs-4);
+  font-size: var(--fs-3);
   font-weight: var(--fw-500);
   max-width: max-content;
   border: 1px solid var(--white-1);
@@ -178,9 +178,10 @@ body {
   align-items: center;
   gap: 20px;
   padding: 18px 30px;
-  border-radius: var(--radius-pill);
+  border-radius: 100px;
   transition: var(--transition-1);
   animation: pulse 1.5s ease infinite;
+  
 }
 
 .btn ion-icon { font-size: 16px; }
@@ -195,7 +196,7 @@ body {
 .grid-list {
   display: grid;
   gap: 20px;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: fr 1fr;
 }
 
 .section-title,
@@ -219,7 +220,8 @@ body {
 \*-----------------------------------*/
 .product-card {
   position: relative;
-  border: 1px solid var(--white_10);
+  /* border: 1px solid var(--white_10); */
+  /* border-radius: var(--radius-circle); */
 }
 
 .product-card .card-badge {
@@ -228,11 +230,11 @@ body {
   left: 15px;
   background-color: var(--maximum-blue-green);
   color: var(--xiketic);
-  font-size: var(--fs-8);
+  font-size: var(--fs-7);
   font-weight: var(--fw-700);
   text-transform: uppercase;
   padding: 3px 8px;
-  border-radius: var(--radius-pill);
+  border-radius: 80px;
 }
 
 .product-card .card-banner { position: relative; }
@@ -272,6 +274,11 @@ body {
 
 .product-card .h3 { font-weight: var(--fw-400); }
 
+.card-title{color: var(--maximum-blue-green);}
+
+.card-title h3{
+  color: var(--maximum-blue-green);
+}
 .product-card .card-title {
   font-family: var(--ff-jost);
   transition: var(--transition-1);
@@ -319,7 +326,7 @@ body {
 .header-contact-link { display: none; }
 
 .header {
-  position: absolute;
+  position: sticky;
   top: 0;
   left: 0;
   width: 100%;
@@ -338,7 +345,7 @@ body {
   100% { transform: translateY(0); }
 }
 
-.header-top { padding-block: 25px; }
+
 
 .header-top .container {
   display: flex;
@@ -354,7 +361,7 @@ body {
 
 .header-action-btn,
 .nav-open-btn {
-  font-size: 24px;
+  font-size: 45px;
   transition: var(--transition-1);
 }
 
@@ -364,7 +371,8 @@ body {
 
 .header-action-btn { position: relative; }
 
-.header-action-btn .span {
+
+.header-action-btn .span count{
   position: absolute;
   top: -15px;
   right: -8px;
@@ -479,6 +487,7 @@ body {
 .hero-banner {
   max-width: 300px;
   margin-inline: auto;
+  max-width: unset;
 }
 
 
@@ -513,33 +522,6 @@ body {
   padding-block: 12px;
   margin-inline: auto;
 }
-
-
-
-/*-----------------------------------*\
-  #POPULAR
-\*-----------------------------------*/
-
-.popular .section-text { margin-block: 10px 40px; }
-
-.filter-list {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 5px 10px;
-  margin-block-end: 40px;
-}
-
-.filter-btn {
-  font-family: var(--ff-jost);
-  font-size: var(--fs-5);
-  padding: 5px 20px;
-  transition: var(--transition-1);
-}
-
-.filter-btn.active { color: var(--maximum-blue-green); }
-
-
 
 
 
@@ -607,8 +589,6 @@ body {
 
 
 
-
-
 /*-----------------------------------*\
   #FOOTER
 \*-----------------------------------*/
@@ -666,16 +646,15 @@ body {
 \*-----------------------------------*/
 
 /**
- * responsive for large than 575px screen
+ * responsive for large than 500px screen
  */
 
-@media (min-width: 575px) {
-
+@media (min-width: 500px) {
   /**
    * REUSED STYLE
    */
 
-  .container {
+   .container {
     max-width: 540px;
     width: 100%;
     margin-inline: auto;
@@ -716,18 +695,6 @@ body {
   .hero { padding-block-start: 150px; }
 
 }
-
-
-/**
- * responsive for large than 768px screen
- */
-
-@media (min-width: 768px) {
-
-  /**
-   * CUSTOM PROPERTY
-   */
-
   :root {
 
     /**
@@ -775,7 +742,7 @@ body {
 
   .product-card .h3 { --fs-6: 1.8rem; }
 
-  .product-card .card-price {
+  .product-card  {
     font-size: var(--fs-4);
     font-weight: var(--fw-700);
   }
@@ -831,21 +798,6 @@ body {
 
   .footer-bottom .w-100 { margin-inline: 0; }
 
-}
-
-
-
-
-
-/**
- * responsive for large than 992px screen
- */
-
-@media (min-width: 992px) {
-
-  /**
-   * CUSTOM PROPERTY
-   */
 
   :root {
 
@@ -900,8 +852,9 @@ body {
   }
 
   .header-top {
-    padding-block: 20px;
-    border-block-end: 1px solid var(--white_10);
+    
+    padding-block: 1px;
+    border-block-end: var(--white_10);
   }
 
   .input-field {
@@ -955,6 +908,7 @@ body {
     gap: 10px;
     transition: var(--transition-1);
   }
+  
 
   .header-contact-link .span { font-size: var(--fs-4); }
 
@@ -1025,17 +979,6 @@ body {
 
   .footer-brand { padding-inline-end: 40px; }
 
-}
-
-
-
-
-
-/**
- * responsive for large than 1200px screen
- */
-
-@media (min-width: 700px) {
 
   /**
    * CUSTOM PROPERTY
@@ -1046,12 +989,8 @@ body {
     /**
      * typography
      */
-
     --fs-1: 7rem;
-
   }
-
-
 
   /**
    * REUSED STYLE
@@ -1074,30 +1013,22 @@ body {
 
   .navbar-list { gap: 50px; }
 
-
-
   /**
    * HERO
    */
-
   .hero-text { font-size: var(--fs-5); }
-
-
 
   /**
    * FEATURE
    */
-
   .feature .grid-list { grid-template-columns: repeat(4, 1fr); }
 
   .feature-card { height: 100%; }
 
 
-
   /**
    * OFFER
    */
-
   .offer .container { max-width: 700px; }
 
 
@@ -1105,26 +1036,11 @@ body {
   /**
    * POPULAR
    */
-
   .popular .scrollbar-item {
     min-width: calc(25% - 22.5px);
     width: calc(25% - 22.5px);
   }
-
   .popular .has-scrollbar { padding-block-end: 50px; }
-
-  /**
-   * BACK TO TOP
-   */
-
-  /* .back-top-btn {
-    bottom: 70px;
-    right: 30px;
-    font-size: 25px;
-    padding: 15px;
-  }
-
-} */
 
 
 /**BOOK DETAILS**/
@@ -1155,6 +1071,35 @@ body {
   color: var(--maximum-blue-green);
   margin-bottom: 20px;
 }
+.book-details .container {
+  flex-direction: row;
+  text-align: left;
+  justify-content: center;
+  gap: 40px;
+}
+
+.book-cover {
+  margin-bottom: 0;
+  max-width: 240px;
+}
+
+.book-info {
+  flex: 1;
+}
+.book-details {
+  padding: 40px;
+}
+
+.book-title {
+  font-size: var(--fs-3);
+}
+
+.book-author,
+.book-bio,
+.book-description,
+.book-year {
+  font-size: var(--fs-6);
+}
 
 .book-author,
 .book-bio,
@@ -1169,47 +1114,8 @@ body {
 .book-bio strong,
 .book-description strong,
 .book-year strong {
-  color: #FF6500;
+  color: #FF6500;}
   
-}
-
-@media (min-width: 768px) {
-  .book-details .container {
-    flex-direction: row;
-    text-align: left;
-    justify-content: center;
-    gap: 40px;
-  }
-
-  .book-cover {
-    margin-bottom: 0;
-  }
-
-  .book-info {
-    flex: 1;
-  }
-}
-
-@media (min-width: 992px) {
-  .book-details {
-    padding: 40px;
-  }
-
-  .book-cover {
-    max-width: 240px;
-  }
-
-  .book-title {
-    font-size: var(--fs-3);
-  }
-
-  .book-author,
-  .book-bio,
-  .book-description,
-  .book-year {
-    font-size: var(--fs-6);
-  }
-}
 
 
 /*DELETE AND READ*/
